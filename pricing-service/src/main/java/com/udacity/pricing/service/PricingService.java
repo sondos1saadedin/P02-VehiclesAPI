@@ -1,6 +1,7 @@
 package com.udacity.pricing.service;
 
 import com.udacity.pricing.domain.price.Price;
+import com.udacity.pricing.domain.price.PriceRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -15,6 +16,11 @@ import java.util.stream.LongStream;
  */
 @Service
 public class PricingService {
+    PriceRepository priceRepository;
+
+    public PricingService(PriceRepository priceRepository) {
+        this.priceRepository = priceRepository;
+    }
 
     /**
      * Holds {ID: Price} pairings (current implementation allows for 20 vehicles)
@@ -48,4 +54,8 @@ public class PricingService {
                 .multiply(new BigDecimal(5000d)).setScale(2, RoundingMode.HALF_UP);
     }
 
+
+    public void savePrice(Price price) {
+        priceRepository.save(price);
+    }
 }

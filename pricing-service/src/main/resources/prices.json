@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "currency": "USD",
+    "price": 1234.3
+  },
+  {
+    "id": 2,
+    "currency": "USD",
+    "price": 1234.3
+  }
+]
