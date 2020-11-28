@@ -68,6 +68,10 @@ public class CarService {
                     .map(carToBeUpdated -> {
                         carToBeUpdated.setDetails(car.getDetails());
                         carToBeUpdated.setLocation(car.getLocation());
+                        carToBeUpdated.setCondition(car.getCondition());
+                        carToBeUpdated.setModifiedAt(car.getModifiedAt());
+                        carToBeUpdated.setCreatedAt(car.getCreatedAt());
+                        carToBeUpdated.setPrice(car.getPrice());
                         return repository.save(carToBeUpdated);
                     }).orElseThrow(CarNotFoundException::new);
         }

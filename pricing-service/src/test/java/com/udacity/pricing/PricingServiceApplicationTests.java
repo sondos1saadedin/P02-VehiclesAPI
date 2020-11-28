@@ -36,14 +36,13 @@ public class PricingServiceApplicationTests {
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-	private PricingService pricingService;
+	PricingService pricingService;
 
 	@Autowired
 	public void setLocationService(PricingService pricingService) {
 		this.pricingService = pricingService;
 	}
 
-	@Test
 	@Before
 	public void contextLoads() {
 		JSONParser jsonParser = new JSONParser();
